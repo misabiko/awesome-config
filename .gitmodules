@@ -1,0 +1,6 @@
+[submodule "keyboard_layout"]
+	path = keyboard_layout
+	url = https://github.com/echuraev/keyboard_layout.git
+[submodule "awesome-switcher"]
+	path = awesome-switcher
+	url = https://github.com/berlam/awesome-switcher.git
