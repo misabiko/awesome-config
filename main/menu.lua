@@ -1,6 +1,8 @@
 local menubar = require("menubar")
 local freedesktop = require("freedesktop")
 
+-- describes the Super+W menu, same when right clicking background
+
 local _M = {}
 
 awesomemenu = {
