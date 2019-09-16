@@ -78,7 +78,7 @@ local globalkeys = gears.table.join(
 			  {description = "decrease the number of columns", group = "layout"}),
 	awful.key({ modkey     }, "b", function () awful.spawn(RC.vars.browser)          end,
 			  {description = "launch Browser", group = "launcher"}),
-	awful.key({ modkey, "Control"}, "Escape", function () awful.spawn("/usr/bin/rofi -show drun -modi drun") end,
+	awful.key({ modkey, "Control"}, "Escape", function () awful.spawn("/usr/bin/rofi -show drun") end,
 			  {description = "launch rofi", group = "launcher"}),
 	awful.key({ modkey,           }, "e", function () awful.spawn(RC.vars.filemanager)            end,
 			  {description = "launch filemanager", group = "launcher"}),
