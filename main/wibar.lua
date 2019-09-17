@@ -8,10 +8,13 @@ local gears = require("gears")
 local taglistbuttons = require("binding.taglistbuttons")
 local tasklistbuttons = require("binding.tasklistbuttons")
 
--- create a textclock widget
-mytextclock = wibox.widget.textclock("%a %Y/%m/%d %I:%M %p ")
-local month_calendar = awful.widget.calendar_popup.month()
-month_calendar:attach( mytextclock, "br", {on_hover = false} )
+-- create a textclock widgets
+local datewidget = wibox.widget.textclock("%a %Y/%m/%d")
+local clockwidget = wibox.widget.textclock("%I:%M %p ")
+
+-- attach calendar to datewidget
+local calendar = awful.widget.calendar_popup.month()
+calendar:attach( datewidget, "br", {on_hover = false} )
 
 -- keyboard map indicator and switcher
 RC.kbdcfg = keyboard_layout.kbdcfg({cmd = "fcitx-remote -s", type = "tui"})
@@ -68,7 +71,9 @@ awful.screen.connect_for_each_screen(function(s)
 --            mykeyboardlayout,
             RC.kbdcfg.widget,
             separator,
-            mytextclock,
+            datewidget,
+            separator,
+            clockwidget,
             s.mylayoutbox,
         },
     }
