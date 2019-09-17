@@ -4,6 +4,8 @@ local wibox = require("wibox")
 local keyboard_layout = require("keyboard_layout")
 local beautiful = require("beautiful")
 local gears = require("gears")
+local abutton = require("awful.button")
+local worldclock_popup = require("main.worldclock_popup")
 
 local taglistbuttons = require("binding.taglistbuttons")
 local tasklistbuttons = require("binding.tasklistbuttons")
@@ -15,6 +17,10 @@ local clockwidget = wibox.widget.textclock("%I:%M %p ")
 -- attach calendar to datewidget
 local calendar = awful.widget.calendar_popup.month()
 calendar:attach( datewidget, "br", {on_hover = false} )
+
+-- attach world clock to clockwidget
+local worldclock = worldclock_popup()
+worldclock:attach( clockwidget, "br", {on_hover = false} )
 
 -- keyboard map indicator and switcher
 RC.kbdcfg = keyboard_layout.kbdcfg({cmd = "fcitx-remote -s", type = "tui"})
