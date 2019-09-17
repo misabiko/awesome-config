@@ -10,6 +10,8 @@ local tasklistbuttons = require("binding.tasklistbuttons")
 
 -- create a textclock widget
 mytextclock = wibox.widget.textclock("%a %Y/%m/%d %I:%M %p ")
+local month_calendar = awful.widget.calendar_popup.month()
+month_calendar:attach( mytextclock, "br", {on_hover = false} )
 
 -- keyboard map indicator and switcher
 RC.kbdcfg = keyboard_layout.kbdcfg({cmd = "fcitx-remote -s", type = "tui"})
